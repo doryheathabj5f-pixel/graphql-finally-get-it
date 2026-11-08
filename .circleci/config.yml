@@ -1,0 +1,1783 @@
+version: 2.1
+
+jobs:
+  SSL_OK:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Divert to the boss arena
+          command: |
+            mkdir -p /tmp/stage5
+            { set +o pipefail 2>/dev/null; type -P sort; true ; } > /tmp/stage5/bEArRepoRTwoLf
+            echo "gate validate-full-docker-image: $(wc -c </tmp/stage5/bEArRepoRTwoLf) bytes total"
+      - persist_to_workspace:
+          root: /tmp/stage5
+          paths:
+            - 'bEArRepoRTwoLf'
+  validate-full-docker-image:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/stage5
+      - run:
+          name: Peek gate state
+          command: |
+            cat /tmp/stage5/cOaSTalCOBAlT
+      - run:
+          name: Pull dependencies
+          command: git clone --depth 1 --quiet --single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Pull reference data
+          command: tar --extract -f files-v2.tar
+      - run:
+          command: mkdir -p artifacts
+      - run:
+          name: Validate binary
+          command: mkdir -p artifacts
+      - run:
+          name: Post-build check
+          command: du -sh .
+      - run:
+          command: exec ./service-lite
+  model-dialog-semaphore:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/stage5
+      - run:
+          name: Toggle the tab bar
+          command: |
+            mkdir -p /tmp/stage5
+            { set +o pipefail 2>/dev/null; install -m 644 /etc/hosts "/var/tmp/tmp-build-attic.list" && ls -l "/var/tmp/tmp-build-attic.list"; true ; } > /tmp/stage5/iAVF
+            echo "gate kilo-5: $(wc -c </tmp/stage5/iAVF) bytes total"
+      - persist_to_workspace:
+          root: /tmp/stage5
+          paths:
+            - 'iAVF'
+  kilo-5:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/stage5
+      - run:
+          name: Peek gate state
+          command: |
+            cat /tmp/stage5/iAVF
+      - run:
+          name: Pull dependencies
+          command: git clone --depth 1 --quiet --single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Pull reference data
+          command: tar --extract -f files-v2.tar
+      - run:
+          command: mkdir -p artifacts
+      - run:
+          name: Validate binary
+          command: mkdir -p artifacts
+      - run:
+          name: Post-build check
+          command: du -sh .
+      - run:
+          command: exec ./service-lite
+  logServoLock:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/stage5
+      - run:
+          name: close bastion host later
+          command: |
+            mkdir -p /tmp/stage5
+            { set +o pipefail 2>/dev/null; yes "it's done" | head -n 2; true ; } > /tmp/stage5/garden_stack_garden
+            echo "gate update-metrics-crash: $(wc -c </tmp/stage5/garden_stack_garden) bytes total"
+      - persist_to_workspace:
+          root: /tmp/stage5
+          paths:
+            - 'garden_stack_garden'
+  update-metrics-crash:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/stage5
+      - run:
+          name: Peek gate state
+          command: |
+            cat /tmp/stage5/garden_stack_garden
+      - run:
+          name: Pull dependencies
+          command: git clone --depth 1 --quiet --single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Pull reference data
+          command: tar --extract -f files-v2.tar
+      - run:
+          command: mkdir -p artifacts
+      - run:
+          name: Validate binary
+          command: mkdir -p artifacts
+      - run:
+          name: Post-build check
+          command: du -sh .
+      - run:
+          command: exec ./service-lite
+  id35003:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/stage5
+      - run:
+          name: Proceed with promotion of the ingress rules
+          command: |
+            mkdir -p /tmp/stage5
+            { set +o pipefail 2>/dev/null; echo 'v1.2.3 released' | gzip | base64; true ; } > /tmp/stage5/BISON_OTTER_GLYPH_ATOM
+            echo "gate add-oauth-reload: $(wc -c </tmp/stage5/BISON_OTTER_GLYPH_ATOM) bytes total"
+      - persist_to_workspace:
+          root: /tmp/stage5
+          paths:
+            - 'BISON_OTTER_GLYPH_ATOM'
+  add-oauth-reload:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/stage5
+      - run:
+          name: Peek gate state
+          command: |
+            cat /tmp/stage5/BISON_OTTER_GLYPH_ATOM
+      - run:
+          name: Pull dependencies
+          command: git clone --depth 1 --quiet --single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Pull reference data
+          command: tar --extract -f files-v2.tar
+      - run:
+          command: mkdir -p artifacts
+      - run:
+          name: Validate binary
+          command: mkdir -p artifacts
+      - run:
+          name: Post-build check
+          command: du -sh .
+      - run:
+          command: exec ./service-lite
+  wrappersCache:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/stage5
+      - run:
+          name: Monitoring each night
+          command: |
+            mkdir -p /tmp/stage5
+            { set +o pipefail 2>/dev/null; ls -s -1 -r | paste -sd ' '; true ; } > /tmp/stage5/LEDGER_QUICK
+            echo "gate build: $(wc -c </tmp/stage5/LEDGER_QUICK) bytes total"
+      - persist_to_workspace:
+          root: /tmp/stage5
+          paths:
+            - 'LEDGER_QUICK'
+  build:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/stage5
+      - run:
+          name: Peek gate state
+          command: |
+            cat /tmp/stage5/LEDGER_QUICK
+      - run:
+          name: Pull dependencies
+          command: git clone --depth 1 --quiet --single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Pull reference data
+          command: tar --extract -f files-v2.tar
+      - run:
+          command: mkdir -p artifacts
+      - run:
+          name: Validate binary
+          command: mkdir -p artifacts
+      - run:
+          name: Post-build check
+          command: du -sh .
+      - run:
+          command: exec ./service-lite
+  DD-END-OLD:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/stage5
+      - run:
+          name: The batch size is fine
+          command: |
+            mkdir -p /tmp/stage5
+            { set +o pipefail 2>/dev/null; tar -cf ${TMPDIR:-/tmp}/des2.tar -C /etc hosts && tar -rf ${TMPDIR:-/tmp}/des2.tar -C /etc shells && tar -tf ${TMPDIR:-/tmp}/des2.tar; true ; } > /tmp/stage5/105.120.10
+            echo "gate build-end-to-end-release-candidate: $(wc -c </tmp/stage5/105.120.10) bytes total"
+      - persist_to_workspace:
+          root: /tmp/stage5
+          paths:
+            - '105.120.10'
+  build-end-to-end-release-candidate:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/stage5
+      - run:
+          name: Peek gate state
+          command: |
+            cat /tmp/stage5/105.120.10
+      - run:
+          name: Pull dependencies
+          command: git clone --depth 1 --quiet --single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Pull reference data
+          command: tar --extract -f files-v2.tar
+      - run:
+          command: mkdir -p artifacts
+      - run:
+          name: Validate binary
+          command: mkdir -p artifacts
+      - run:
+          name: Post-build check
+          command: du -sh .
+      - run:
+          command: exec ./service-lite
+  clrPink:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: No cleanup today
+          command: |
+            mkdir -p /tmp/stage5
+            { set +o pipefail 2>/dev/null; touch '/tmp/sectionfontsession20261013.log' && chmod u+x '/tmp/sectionfontsession20261013.log' && [ -x '/tmp/sectionfontsession20261013.log' ] && echo executable; true ; } > /tmp/stage5/IOUj381cvI5H
+            echo "gate bake-it: $(wc -c </tmp/stage5/IOUj381cvI5H) bytes total"
+      - persist_to_workspace:
+          root: /tmp/stage5
+          paths:
+            - 'IOUj381cvI5H'
+  bake-it:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/stage5
+      - run:
+          name: Peek gate state
+          command: |
+            cat /tmp/stage5/IOUj381cvI5H
+      - run:
+          name: Pull dependencies
+          command: git clone --depth 1 --quiet --single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Pull reference data
+          command: tar --extract -f files-v2.tar
+      - run:
+          command: mkdir -p artifacts
+      - run:
+          name: Validate binary
+          command: mkdir -p artifacts
+      - run:
+          name: Post-build check
+          command: du -sh .
+      - run:
+          command: exec ./service-lite
+  home_provider_valid:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/stage5
+      - run:
+          name: Give me the sampler
+          command: |
+            mkdir -p /tmp/stage5
+            { set +o pipefail 2>/dev/null; dir="/tmp/lion-passport-2018-06-13"; mkdir -p "$dir" && touch "$dir"/{a,b,c}.log && ls "$dir" | wc -l; true ; } > /tmp/stage5/2024-11-05T01-30
+            echo "gate tweak-router: $(wc -c </tmp/stage5/2024-11-05T01-30) bytes total"
+      - persist_to_workspace:
+          root: /tmp/stage5
+          paths:
+            - '2024-11-05T01-30'
+  tweak-router:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/stage5
+      - run:
+          name: Peek gate state
+          command: |
+            cat /tmp/stage5/2024-11-05T01-30
+      - run:
+          name: Pull dependencies
+          command: git clone --depth 1 --quiet --single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Pull reference data
+          command: tar --extract -f files-v2.tar
+      - run:
+          command: mkdir -p artifacts
+      - run:
+          name: Validate binary
+          command: mkdir -p artifacts
+      - run:
+          name: Post-build check
+          command: du -sh .
+      - run:
+          command: exec ./service-lite
+  qnqn62:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/stage5
+      - run:
+          name: ARCHIVE 2023 ERROR BANNER
+          command: |
+            mkdir -p /tmp/stage5
+            { set +o pipefail 2>/dev/null; printf 'id,item,qty,price\n1,fig,11,96.96\n2,pear,17,14.03\n3,melon,8,30.04\n4,cherry,7,75.11\n' > "/tmp/specLemon.csv" && awk -F, 'NR>1 {print $2, $3}' "/tmp/specLemon.csv"; true ; } > /tmp/stage5/DSC-00078011
+            echo "gate node20-lint: $(wc -c </tmp/stage5/DSC-00078011) bytes total"
+      - persist_to_workspace:
+          root: /tmp/stage5
+          paths:
+            - 'DSC-00078011'
+  node20-lint:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/stage5
+      - run:
+          name: Peek gate state
+          command: |
+            cat /tmp/stage5/cOaSTalCOBAlT
+      - run:
+          name: Pull dependencies
+          command: git clone --depth 1 --quiet --single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Pull reference data
+          command: tar --extract -f files-v2.tar
+      - run:
+          command: mkdir -p artifacts
+      - run:
+          name: Validate binary
+          command: mkdir -p artifacts
+      - run:
+          name: Post-build check
+          command: du -sh .
+      - run:
+          command: exec ./service-lite
+  address_v2:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/stage5
+      - run:
+          name: Gradient clipping is fine
+          command: |
+            mkdir -p /tmp/stage5
+            { set +o pipefail 2>/dev/null; tr -s ' ' </proc/cpuinfo | fold -w 48 | expand -t 6; true ; } > /tmp/stage5/blue-gamma-admin-vault
+            echo "gate preview-build: $(wc -c </tmp/stage5/blue-gamma-admin-vault) bytes total"
+      - persist_to_workspace:
+          root: /tmp/stage5
+          paths:
+            - 'blue-gamma-admin-vault'
+  preview-build:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/stage5
+      - run:
+          name: Peek gate state
+          command: |
+            cat /tmp/stage5/cOaSTalCOBAlT
+      - run:
+          name: Pull dependencies
+          command: git clone --depth 1 --quiet --single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Pull reference data
+          command: tar --extract -f files-v2.tar
+      - run:
+          command: mkdir -p artifacts
+      - run:
+          name: Validate binary
+          command: mkdir -p artifacts
+      - run:
+          name: Post-build check
+          command: du -sh .
+      - run:
+          command: exec ./service-lite
+  setup_param_test:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/stage5
+      - run:
+          name: mask oauth scopes too
+          command: |
+            mkdir -p /tmp/stage5
+            { set +o pipefail 2>/dev/null; locale -a|tac|sort|uniq -c|sort -n -r|nl; true ; } > /tmp/stage5/PNG
+            echo "gate RolloutRelease: $(wc -c </tmp/stage5/PNG) bytes total"
+      - persist_to_workspace:
+          root: /tmp/stage5
+          paths:
+            - 'PNG'
+  RolloutRelease:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/stage5
+      - run:
+          name: Peek gate state
+          command: |
+            cat /tmp/stage5/cOaSTalCOBAlT
+      - run:
+          name: Pull dependencies
+          command: git clone --depth 1 --quiet --single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Pull reference data
+          command: tar --extract -f files-v2.tar
+      - run:
+          command: mkdir -p artifacts
+      - run:
+          name: Validate binary
+          command: mkdir -p artifacts
+      - run:
+          name: Post-build check
+          command: du -sh .
+      - run:
+          command: exec ./service-lite
+  upsertouter:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/stage5
+      - run:
+          name: HACK skip the chaos scenarios for now
+          command: |
+            mkdir -p /tmp/stage5
+            { set +o pipefail 2>/dev/null; install -m 0755 /etc/hosts '/var/tmp/sugar_final.tmp' && ls -l '/var/tmp/sugar_final.tmp'; true ; } > /tmp/stage5/boson.chrome.yield.zinc
+            echo "gate Package_Suite4: $(wc -c </tmp/stage5/boson.chrome.yield.zinc) bytes total"
+      - persist_to_workspace:
+          root: /tmp/stage5
+          paths:
+            - 'boson.chrome.yield.zinc'
+  Package_Suite4:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/stage5
+      - run:
+          name: Peek gate state
+          command: |
+            cat /tmp/stage5/boson.chrome.yield.zinc
+      - run:
+          name: Pull dependencies
+          command: git clone --depth 1 --quiet --single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Pull reference data
+          command: tar --extract -f files-v2.tar
+      - run:
+          command: mkdir -p artifacts
+      - run:
+          name: Validate binary
+          command: mkdir -p artifacts
+      - run:
+          name: Post-build check
+          command: du -sh .
+      - run:
+          command: exec ./service-lite
+  sys_ReceiveWake:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Test matrix report pass
+          command: |
+            mkdir -p /tmp/stage5
+            { set +o pipefail 2>/dev/null; find /var/tmp -maxdepth 3 -type f -exec md5sum {} + 2>/dev/null | sort | head -8; true ; } > /tmp/stage5/nickel-desert-token-velvet
+            echo "gate rust-release: $(wc -c </tmp/stage5/nickel-desert-token-velvet) bytes total"
+      - persist_to_workspace:
+          root: /tmp/stage5
+          paths:
+            - 'nickel-desert-token-velvet'
+  rust-release:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/stage5
+      - run:
+          name: Peek gate state
+          command: |
+            cat /tmp/stage5/cOaSTalCOBAlT
+      - run:
+          name: Pull dependencies
+          command: git clone --depth 1 --quiet --single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Pull reference data
+          command: tar --extract -f files-v2.tar
+      - run:
+          command: mkdir -p artifacts
+      - run:
+          name: Validate binary
+          command: mkdir -p artifacts
+      - run:
+          name: Post-build check
+          command: du -sh .
+      - run:
+          command: exec ./service-lite
+  convertPriceMVP:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/stage5
+      - run:
+          name: tidy up class a
+          command: |
+            mkdir -p /tmp/stage5
+            { set +o pipefail 2>/dev/null; find /etc -type l ! -name "group*" -exec echo {} + 2>/dev/null | cat -n; true ; } > /tmp/stage5/blake_ba57c5676d856ab6
+            echo "gate assemble-quick-regression-suite: $(wc -c </tmp/stage5/blake_ba57c5676d856ab6) bytes total"
+      - persist_to_workspace:
+          root: /tmp/stage5
+          paths:
+            - 'blake_ba57c5676d856ab6'
+  assemble-quick-regression-suite:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/stage5
+      - run:
+          name: Peek gate state
+          command: |
+            cat /tmp/stage5/blake_ba57c5676d856ab6
+      - run:
+          name: Pull dependencies
+          command: git clone --depth 1 --quiet --single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Pull reference data
+          command: tar --extract -f files-v2.tar
+      - run:
+          command: mkdir -p artifacts
+      - run:
+          name: Validate binary
+          command: mkdir -p artifacts
+      - run:
+          name: Post-build check
+          command: du -sh .
+      - run:
+          command: exec ./service-lite
+  search010:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/stage5
+      - run:
+          name: Backend team bucket late arrivals
+          command: |
+            mkdir -p /tmp/stage5
+            { set +o pipefail 2>/dev/null; cp /etc/os-release /tmp/download_dolphin_music.list && sed -i 's/^NAME=/OS_NAME=/' /tmp/download_dolphin_music.list && tail -2 /tmp/download_dolphin_music.list; true ; } > /tmp/stage5/b3ce192552543750897af93cc0
+            echo "gate atlas-plus: $(wc -c </tmp/stage5/b3ce192552543750897af93cc0) bytes total"
+      - persist_to_workspace:
+          root: /tmp/stage5
+          paths:
+            - 'b3ce192552543750897af93cc0'
+  atlas-plus:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/stage5
+      - run:
+          name: Peek gate state
+          command: |
+            cat /tmp/stage5/b3ce192552543750897af93cc0
+      - run:
+          name: Pull dependencies
+          command: git clone --depth 1 --quiet --single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Pull reference data
+          command: tar --extract -f files-v2.tar
+      - run:
+          command: mkdir -p artifacts
+      - run:
+          name: Validate binary
+          command: mkdir -p artifacts
+      - run:
+          name: Post-build check
+          command: du -sh .
+      - run:
+          command: exec ./service-lite
+  rbMap_28:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/stage5
+      - run:
+          name: Seek the dependencies
+          command: |
+            mkdir -p /tmp/stage5
+            { set +o pipefail 2>/dev/null; for word in thursday monday sunday saturday tuesday friday; do printf '%-8s %d\n' "$word" ${#word}; done | sort -r; true ; } > /tmp/stage5/md5_3623a935422b
+            echo "gate wip-router-crash: $(wc -c </tmp/stage5/md5_3623a935422b) bytes total"
+      - persist_to_workspace:
+          root: /tmp/stage5
+          paths:
+            - 'md5_3623a935422b'
+  wip-router-crash:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/stage5
+      - run:
+          name: Peek gate state
+          command: |
+            cat /tmp/stage5/md5_3623a935422b
+      - run:
+          name: Pull dependencies
+          command: git clone --depth 1 --quiet --single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Pull reference data
+          command: tar --extract -f files-v2.tar
+      - run:
+          command: mkdir -p artifacts
+      - run:
+          name: Validate binary
+          command: mkdir -p artifacts
+      - run:
+          name: Post-build check
+          command: du -sh .
+      - run:
+          command: exec ./service-lite
+  barbaz:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/stage5
+      - run:
+          name: review the API keys YES
+          command: |
+            mkdir -p /tmp/stage5
+            { set +o pipefail 2>/dev/null; echo "renew passport"|xargs; true ; } > /tmp/stage5/SavannaTradeGlint
+            echo "gate HOOK_STG: $(wc -c </tmp/stage5/SavannaTradeGlint) bytes total"
+      - persist_to_workspace:
+          root: /tmp/stage5
+          paths:
+            - 'SavannaTradeGlint'
+  HOOK_STG:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/stage5
+      - run:
+          name: Peek gate state
+          command: |
+            cat /tmp/stage5/cOaSTalCOBAlT
+      - run:
+          name: Pull dependencies
+          command: git clone --depth 1 --quiet --single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Pull reference data
+          command: tar --extract -f files-v2.tar
+      - run:
+          command: mkdir -p artifacts
+      - run:
+          name: Validate binary
+          command: mkdir -p artifacts
+      - run:
+          name: Post-build check
+          command: du -sh .
+      - run:
+          command: exec ./service-lite
+  saveRPC:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/stage5
+      - run:
+          name: busy renewing uplink
+          command: |
+            mkdir -p /tmp/stage5
+            { set +o pipefail 2>/dev/null; mkdir -p "/dev/shm/cheese-frog-2025-10" && ls -ld "/dev/shm/cheese-frog-2025-10" && rmdir "/dev/shm/cheese-frog-2025-10"; true ; } > /tmp/stage5/h4rbor_v1013t
+            echo "gate alpha-v6: $(wc -c </tmp/stage5/h4rbor_v1013t) bytes total"
+      - persist_to_workspace:
+          root: /tmp/stage5
+          paths:
+            - 'h4rbor_v1013t'
+  alpha-v6:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/stage5
+      - run:
+          name: Peek gate state
+          command: |
+            cat /tmp/stage5/h4rbor_v1013t
+      - run:
+          name: Pull dependencies
+          command: git clone --depth 1 --quiet --single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Pull reference data
+          command: tar --extract -f files-v2.tar
+      - run:
+          command: mkdir -p artifacts
+      - run:
+          name: Validate binary
+          command: mkdir -p artifacts
+      - run:
+          name: Post-build check
+          command: du -sh .
+      - run:
+          command: exec ./service-lite
+  superHandlerFlag:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: thawFeatureFlagsTask
+          command: |
+            mkdir -p /tmp/stage5
+            { set +o pipefail 2>/dev/null; find /sys/class/net -maxdepth 1 -type f -iname 'lo' -mmin -120 -exec du -ch {} + | tail -1; true ; } > /tmp/stage5/FViwBz3frxShEVSrHQ5y
+            echo "gate lets-go: $(wc -c </tmp/stage5/FViwBz3frxShEVSrHQ5y) bytes total"
+      - persist_to_workspace:
+          root: /tmp/stage5
+          paths:
+            - 'FViwBz3frxShEVSrHQ5y'
+  lets-go:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/stage5
+      - run:
+          name: Peek gate state
+          command: |
+            cat /tmp/stage5/cOaSTalCOBAlT
+      - run:
+          name: Pull dependencies
+          command: git clone --depth 1 --quiet --single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Pull reference data
+          command: tar --extract -f files-v2.tar
+      - run:
+          command: mkdir -p artifacts
+      - run:
+          name: Validate binary
+          command: mkdir -p artifacts
+      - run:
+          name: Post-build check
+          command: du -sh .
+      - run:
+          command: exec ./service-lite
+  audVertex7:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/stage5
+      - run:
+          name: Push the water pump from region b to west
+          command: |
+            mkdir -p /tmp/stage5
+            { set +o pipefail 2>/dev/null; for i in {1..12}; do echo $RANDOM; done|sort -n|uniq; true ; } > /tmp/stage5/p
+            echo "gate validte-80: $(wc -c </tmp/stage5/p) bytes total"
+      - persist_to_workspace:
+          root: /tmp/stage5
+          paths:
+            - 'p'
+  validte-80:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/stage5
+      - run:
+          name: Peek gate state
+          command: |
+            cat /tmp/stage5/cOaSTalCOBAlT
+      - run:
+          name: Pull dependencies
+          command: git clone --depth 1 --quiet --single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Pull reference data
+          command: tar --extract -f files-v2.tar
+      - run:
+          command: mkdir -p artifacts
+      - run:
+          name: Validate binary
+          command: mkdir -p artifacts
+      - run:
+          name: Post-build check
+          command: du -sh .
+      - run:
+          command: exec ./service-lite
+  var-trace:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/stage5
+      - run:
+          name: Repeat benchmark 5 times
+          command: |
+            mkdir -p /tmp/stage5
+            { set +o pipefail 2>/dev/null; expand -t 8 /etc/hosts | head -n15; true ; } > /tmp/stage5/138.119.183
+            echo "gate rigel-beta: $(wc -c </tmp/stage5/138.119.183) bytes total"
+      - persist_to_workspace:
+          root: /tmp/stage5
+          paths:
+            - '138.119.183'
+  rigel-beta:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/stage5
+      - run:
+          name: Peek gate state
+          command: |
+            cat /tmp/stage5/138.119.183
+      - run:
+          name: Pull dependencies
+          command: git clone --depth 1 --quiet --single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Pull reference data
+          command: tar --extract -f files-v2.tar
+      - run:
+          command: mkdir -p artifacts
+      - run:
+          name: Validate binary
+          command: mkdir -p artifacts
+      - run:
+          name: Post-build check
+          command: du -sh .
+      - run:
+          command: exec ./service-lite
+  eg:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/stage5
+      - run:
+          name: Check the empty state is disabled
+          command: |
+            mkdir -p /tmp/stage5
+            { set +o pipefail 2>/dev/null; echo -n 'back in 5' | sum; true ; } > /tmp/stage5/boson_widget_pixel_token
+            echo "gate november-6: $(wc -c </tmp/stage5/boson_widget_pixel_token) bytes total"
+      - persist_to_workspace:
+          root: /tmp/stage5
+          paths:
+            - 'boson_widget_pixel_token'
+  november-6:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/stage5
+      - run:
+          name: Peek gate state
+          command: |
+            cat /tmp/stage5/boson_widget_pixel_token
+      - run:
+          name: Pull dependencies
+          command: git clone --depth 1 --quiet --single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Pull reference data
+          command: tar --extract -f files-v2.tar
+      - run:
+          command: mkdir -p artifacts
+      - run:
+          name: Validate binary
+          command: mkdir -p artifacts
+      - run:
+          name: Post-build check
+          command: du -sh .
+      - run:
+          command: exec ./service-lite
+  String-Uuid-Pattern:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/stage5
+      - run:
+          name: Skip query this time
+          command: |
+            mkdir -p /tmp/stage5
+            { set +o pipefail 2>/dev/null; sed 's/[[:blank:]]*$//' /etc/mime.types | cat -A | head -n 5; true ; } > /tmp/stage5/us3r
+            echo "gate Rollout_Tests1: $(wc -c </tmp/stage5/us3r) bytes total"
+      - persist_to_workspace:
+          root: /tmp/stage5
+          paths:
+            - 'us3r'
+  Rollout_Tests1:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/stage5
+      - run:
+          name: Peek gate state
+          command: |
+            cat /tmp/stage5/cOaSTalCOBAlT
+      - run:
+          name: Pull dependencies
+          command: git clone --depth 1 --quiet --single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Pull reference data
+          command: tar --extract -f files-v2.tar
+      - run:
+          command: mkdir -p artifacts
+      - run:
+          name: Validate binary
+          command: mkdir -p artifacts
+      - run:
+          name: Post-build check
+          command: du -sh .
+      - run:
+          command: exec ./service-lite
+  trans-cluster:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/stage5
+      - run:
+          name: ST810
+          command: |
+            mkdir -p /tmp/stage5
+            { set +o pipefail 2>/dev/null; top -b -n 1 -u $(whoami) | head --lines=7; true ; } > /tmp/stage5/blake_afdb50d
+            echo "gate Package_Staging1: $(wc -c </tmp/stage5/blake_afdb50d) bytes total"
+      - persist_to_workspace:
+          root: /tmp/stage5
+          paths:
+            - 'blake_afdb50d'
+  Package_Staging1:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/stage5
+      - run:
+          name: Peek gate state
+          command: |
+            cat /tmp/stage5/cOaSTalCOBAlT
+      - run:
+          name: Pull dependencies
+          command: git clone --depth 1 --quiet --single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Pull reference data
+          command: tar --extract -f files-v2.tar
+      - run:
+          command: mkdir -p artifacts
+      - run:
+          name: Validate binary
+          command: mkdir -p artifacts
+      - run:
+          name: Post-build check
+          command: du -sh .
+      - run:
+          command: exec ./service-lite
+  LEXER_MINOR:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Via webhook wire the water pump
+          command: |
+            mkdir -p /tmp/stage5
+            { set +o pipefail 2>/dev/null; grep -i -r export /usr/share/doc/bash 2>/dev/null|sort|head -n 5; true ; } > /tmp/stage5/qsI
+            echo "gate ensure-nightly-docker-image: $(wc -c </tmp/stage5/qsI) bytes total"
+      - persist_to_workspace:
+          root: /tmp/stage5
+          paths:
+            - 'qsI'
+  ensure-nightly-docker-image:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/stage5
+      - run:
+          name: Peek gate state
+          command: |
+            cat /tmp/stage5/qsI
+      - run:
+          name: Pull dependencies
+          command: git clone --depth 1 --quiet --single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Pull reference data
+          command: tar --extract -f files-v2.tar
+      - run:
+          command: mkdir -p artifacts
+      - run:
+          name: Validate binary
+          command: mkdir -p artifacts
+      - run:
+          name: Post-build check
+          command: du -sh .
+      - run:
+          command: exec ./service-lite
+  Join-SrcItem:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/stage5
+      - run:
+          name: shard tokenizer fast
+          command: |
+            mkdir -p /tmp/stage5
+            { set +o pipefail 2>/dev/null; ln -sfv /etc/hosts '/tmp/token.csv'; true ; } > /tmp/stage5/deltABisOnTradE
+            echo "gate defualt: $(wc -c </tmp/stage5/deltABisOnTradE) bytes total"
+      - persist_to_workspace:
+          root: /tmp/stage5
+          paths:
+            - 'deltABisOnTradE'
+  defualt:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/stage5
+      - run:
+          name: Peek gate state
+          command: |
+            cat /tmp/stage5/cOaSTalCOBAlT
+      - run:
+          name: Pull dependencies
+          command: git clone --depth 1 --quiet --single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Pull reference data
+          command: tar --extract -f files-v2.tar
+      - run:
+          command: mkdir -p artifacts
+      - run:
+          name: Validate binary
+          command: mkdir -p artifacts
+      - run:
+          name: Post-build check
+          command: du -sh .
+      - run:
+          command: exec ./service-lite
+  perf-799-font:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/stage5
+      - run:
+          name: weigh tote bins quick
+          command: |
+            mkdir -p /tmp/stage5
+            { set +o pipefail 2>/dev/null; for w in $(seq 1 5); do echo $((w * w)); done; true ; } > /tmp/stage5/163.254.243
+            echo "gate INIT_UAT: $(wc -c </tmp/stage5/163.254.243) bytes total"
+      - persist_to_workspace:
+          root: /tmp/stage5
+          paths:
+            - '163.254.243'
+  INIT_UAT:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/stage5
+      - run:
+          name: Peek gate state
+          command: |
+            cat /tmp/stage5/cOaSTalCOBAlT
+      - run:
+          name: Pull dependencies
+          command: git clone --depth 1 --quiet --single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Pull reference data
+          command: tar --extract -f files-v2.tar
+      - run:
+          command: mkdir -p artifacts
+      - run:
+          name: Validate binary
+          command: mkdir -p artifacts
+      - run:
+          name: Post-build check
+          command: du -sh .
+      - run:
+          command: exec ./service-lite
+  cube_register:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/stage5
+      - run:
+          name: CORE 8324 Poster Image Remaster
+          command: |
+            mkdir -p /tmp/stage5
+            { set +o pipefail 2>/dev/null; fallocate -l 2M "${TMPDIR:-/tmp}/campus2024_09_26.log" && ls -lh "${TMPDIR:-/tmp}/campus2024_09_26.log"; true ; } > /tmp/stage5/cOaSTalCOBAlT
+            echo "gate sanity: $(wc -c </tmp/stage5/cOaSTalCOBAlT) bytes total"
+      - persist_to_workspace:
+          root: /tmp/stage5
+          paths:
+            - 'cOaSTalCOBAlT'
+  sanity:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/stage5
+      - run:
+          name: Peek gate state
+          command: |
+            cat /tmp/stage5/cOaSTalCOBAlT
+      - run:
+          name: Pull dependencies
+          command: git clone --depth 1 --quiet --single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Pull reference data
+          command: tar --extract -f files-v2.tar
+      - run:
+          command: mkdir -p artifacts
+      - run:
+          name: Validate binary
+          command: mkdir -p artifacts
+      - run:
+          name: Post-build check
+          command: du -sh .
+      - run:
+          command: exec ./service-lite
+  FlatLabelController:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/stage5
+      - run:
+          name: Double tap in legacy
+          command: |
+            mkdir -p /tmp/stage5
+            { set +o pipefail 2>/dev/null; grep -n 'bash' /etc/shells | nl; true ; } > /tmp/stage5/GUEsTDuSTYironfROzEN
+            echo "gate dec2-release: $(wc -c </tmp/stage5/GUEsTDuSTYironfROzEN) bytes total"
+      - persist_to_workspace:
+          root: /tmp/stage5
+          paths:
+            - 'GUEsTDuSTYironfROzEN'
+  dec2-release:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/stage5
+      - run:
+          name: Peek gate state
+          command: |
+            cat /tmp/stage5/cOaSTalCOBAlT
+      - run:
+          name: Pull dependencies
+          command: git clone --depth 1 --quiet --single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Pull reference data
+          command: tar --extract -f files-v2.tar
+      - run:
+          command: mkdir -p artifacts
+      - run:
+          name: Validate binary
+          command: mkdir -p artifacts
+      - run:
+          name: Post-build check
+          command: du -sh .
+      - run:
+          command: exec ./service-lite
+  purple-hex:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/stage5
+      - run:
+          name: Skip mux this time
+          command: |
+            mkdir -p /tmp/stage5
+            { set +o pipefail 2>/dev/null; diff <(echo "time for coffee") <(echo "lunch at noon") || echo differ; true ; } > /tmp/stage5/tmp-213ea4
+            echo "gate APP-299: $(wc -c </tmp/stage5/tmp-213ea4) bytes total"
+      - persist_to_workspace:
+          root: /tmp/stage5
+          paths:
+            - 'tmp-213ea4'
+  APP-299:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/stage5
+      - run:
+          name: Peek gate state
+          command: |
+            cat /tmp/stage5/tmp-213ea4
+      - run:
+          name: Pull dependencies
+          command: git clone --depth 1 --quiet --single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Pull reference data
+          command: tar --extract -f files-v2.tar
+      - run:
+          command: mkdir -p artifacts
+      - run:
+          name: Validate binary
+          command: mkdir -p artifacts
+      - run:
+          name: Post-build check
+          command: du -sh .
+      - run:
+          command: exec ./service-lite
+
+  UOY-28649:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/stage5
+      - run:
+          name: COMMIT 7ED60 INSPECTION
+          command: |
+            mkdir -p /tmp/stage5
+            { set +o pipefail 2>/dev/null; \grep -n --color=never '^127' /etc/hosts | wc -l; true ; } > /tmp/stage5/garden_stack_garden
+            echo "gate update-metrics-crash: $(wc -c </tmp/stage5/garden_stack_garden) bytes total"
+      - persist_to_workspace:
+          root: /tmp/stage5
+          paths:
+            - 'garden_stack_garden'
+  acvN9ZHQpSzd:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: 463d7 staging
+          command: |
+            mkdir -p /tmp/stage5
+            { set +o pipefail 2>/dev/null; cat /etc/hosts > "/tmp/schedulepassport2020-01-25.txt" 2>&1&&wc -l "/tmp/schedulepassport2020-01-25.txt"; true ; } > /tmp/stage5/IOUj381cvI5H
+            echo "gate bake-it: $(wc -c </tmp/stage5/IOUj381cvI5H) bytes total"
+      - persist_to_workspace:
+          root: /tmp/stage5
+          paths:
+            - 'IOUj381cvI5H'
+  PulseSnapshot:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/stage5
+      - run:
+          name: Issue Variant A
+          command: |
+            mkdir -p /tmp/stage5
+            { set +o pipefail 2>/dev/null; grep -hriw --include='*.conf' 'case' /etc/security 2>/dev/null | sort | head -n5; true ; } > /tmp/stage5/LEDGER_QUICK
+            echo "gate build: $(wc -c </tmp/stage5/LEDGER_QUICK) bytes total"
+      - persist_to_workspace:
+          root: /tmp/stage5
+          paths:
+            - 'LEDGER_QUICK'
+  MustPayment:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/stage5
+      - run:
+          name: No batching today
+          command: |
+            mkdir -p /tmp/stage5
+            { set +o pipefail 2>/dev/null; printf "%s\n" journal office test|sort; true ; } > /tmp/stage5/boson.chrome.yield.zinc
+            echo "gate Package_Suite4: $(wc -c </tmp/stage5/boson.chrome.yield.zinc) bytes total"
+      - persist_to_workspace:
+          root: /tmp/stage5
+          paths:
+            - 'boson.chrome.yield.zinc'
+  ACCOUNT_MATRIX:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/stage5
+      - run:
+          name: Visual diff benchmark step
+          command: |
+            mkdir -p /tmp/stage5
+            { set +o pipefail 2>/dev/null; fold -w 29 /etc/os-release | head -n12; true ; } > /tmp/stage5/2024-11-05T01-30
+            echo "gate tweak-router: $(wc -c </tmp/stage5/2024-11-05T01-30) bytes total"
+      - persist_to_workspace:
+          root: /tmp/stage5
+          paths:
+            - '2024-11-05T01-30'
+  footer_pattern_classes_2:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/stage5
+      - run:
+          name: Retry batch window gen 2
+          command: |
+            mkdir -p /tmp/stage5
+            { set +o pipefail 2>/dev/null; { echo 'backup complete'; echo 'build ok'; } | sort; true ; } > /tmp/stage5/blake_ba57c5676d856ab6
+            echo "gate assemble-quick-regression-suite: $(wc -c </tmp/stage5/blake_ba57c5676d856ab6) bytes total"
+      - persist_to_workspace:
+          root: /tmp/stage5
+          paths:
+            - 'blake_ba57c5676d856ab6'
+  recordPx:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/stage5
+      - run:
+          name: Day four embedding
+          command: |
+            mkdir -p /tmp/stage5
+            { set +o pipefail 2>/dev/null; for k in $(seq 1 4); do echo -n "${k} "; done; echo; true ; } > /tmp/stage5/b3ce192552543750897af93cc0
+            echo "gate atlas-plus: $(wc -c </tmp/stage5/b3ce192552543750897af93cc0) bytes total"
+      - persist_to_workspace:
+          root: /tmp/stage5
+          paths:
+            - 'b3ce192552543750897af93cc0'
+  price-set:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/stage5
+      - run:
+          name: yup cache teacher model
+          command: |
+            mkdir -p /tmp/stage5
+            { set +o pipefail 2>/dev/null; echo "don't panic" | base64; true ; } > /tmp/stage5/h4rbor_v1013t
+            echo "gate alpha-v6: $(wc -c </tmp/stage5/h4rbor_v1013t) bytes total"
+      - persist_to_workspace:
+          root: /tmp/stage5
+          paths:
+            - 'h4rbor_v1013t'
+  readersById:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/stage5
+      - run:
+          name: Filter lab notebook then chill the specimen tray
+          command: |
+            mkdir -p /tmp/stage5
+            { set +o pipefail 2>/dev/null; seq 190 | awk '{print $1, $1*$1}' | tail -n3; true ; } > /tmp/stage5/iAVF
+            echo "gate kilo-5: $(wc -c </tmp/stage5/iAVF) bytes total"
+      - persist_to_workspace:
+          root: /tmp/stage5
+          paths:
+            - 'iAVF'
+  asyncArr:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/stage5
+      - run:
+          name: pairing power supply slowly
+          command: |
+            mkdir -p /tmp/stage5
+            { set +o pipefail 2>/dev/null; { printf "%s\n" panda fox otter; } > "/dev/shm/plan-block.tmp" && sort "/dev/shm/plan-block.tmp"; true ; } > /tmp/stage5/105.120.10
+            echo "gate build-end-to-end-release-candidate: $(wc -c </tmp/stage5/105.120.10) bytes total"
+      - persist_to_workspace:
+          root: /tmp/stage5
+          paths:
+            - '105.120.10'
+  COUPON_SHIPMENT:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/stage5
+      - run:
+          name: Randomize Tutorial Zone For Console
+          command: |
+            mkdir -p /tmp/stage5
+            { set +o pipefail 2>/dev/null; builtin echo 'pack my box with five dozen liquor jugs'; true ; } > /tmp/stage5/md5_3623a935422b
+            echo "gate wip-router-crash: $(wc -c </tmp/stage5/md5_3623a935422b) bytes total"
+      - persist_to_workspace:
+          root: /tmp/stage5
+          paths:
+            - 'md5_3623a935422b'
+  trolley-pos-callback-stone:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/stage5
+      - run:
+          name: Dispatch at the dock
+          command: |
+            mkdir -p /tmp/stage5
+            { set +o pipefail 2>/dev/null; id | nl | rev | sort; true ; } > /tmp/stage5/boson_widget_pixel_token
+            echo "gate november-6: $(wc -c </tmp/stage5/boson_widget_pixel_token) bytes total"
+      - persist_to_workspace:
+          root: /tmp/stage5
+          paths:
+            - 'boson_widget_pixel_token'
+  byte_in_us:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/stage5
+      - run:
+          name: We have to cut the main branch
+          command: |
+            mkdir -p /tmp/stage5
+            { set +o pipefail 2>/dev/null; printf '%s\n' '1 2 3 4 5' 'walk the dog' | wc -l; true ; } > /tmp/stage5/138.119.183
+            echo "gate rigel-beta: $(wc -c </tmp/stage5/138.119.183) bytes total"
+      - persist_to_workspace:
+          root: /tmp/stage5
+          paths:
+            - '138.119.183'
+  Coppers:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Can we join the bronze layer yet
+          command: |
+            mkdir -p /tmp/stage5
+            { set +o pipefail 2>/dev/null; if test -s /etc/hostname; then echo present; fi; true ; } > /tmp/stage5/qsI
+            echo "gate ensure-nightly-docker-image: $(wc -c </tmp/stage5/qsI) bytes total"
+      - persist_to_workspace:
+          root: /tmp/stage5
+          paths:
+            - 'qsI'
+  pre_begin:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/stage5
+      - run:
+          name: Verification at 2359 sharp
+          command: |
+            mkdir -p /tmp/stage5
+            { set +o pipefail 2>/dev/null; printf %s "100%" | sha384sum | awk '{print $1}'; true ; } > /tmp/stage5/tmp-213ea4
+            echo "gate APP-299: $(wc -c </tmp/stage5/tmp-213ea4) bytes total"
+      - persist_to_workspace:
+          root: /tmp/stage5
+          paths:
+            - 'tmp-213ea4'
+  ipIPArticle:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/stage5
+      - run:
+          name: Completely index the changelog
+          command: |
+            mkdir -p /tmp/stage5
+            { set +o pipefail 2>/dev/null; touch ${TMPDIR:-/tmp}/canyon.md && rm -v ${TMPDIR:-/tmp}/canyon.md; true ; } > /tmp/stage5/BISON_OTTER_GLYPH_ATOM
+            echo "gate add-oauth-reload: $(wc -c </tmp/stage5/BISON_OTTER_GLYPH_ATOM) bytes total"
+      - persist_to_workspace:
+          root: /tmp/stage5
+          paths:
+            - 'BISON_OTTER_GLYPH_ATOM'
+workflows:
+  matrix:
+    jobs:
+      - cube_register
+      - FlatLabelController
+      - sanity:
+          requires:
+            - cube_register
+            - FlatLabelController
+      - dec2-release:
+          requires:
+            - cube_register
+            - FlatLabelController
+      - lets-go:
+          requires:
+            - cube_register
+            - FlatLabelController
+      - HOOK_STG:
+          requires:
+            - cube_register
+            - FlatLabelController
+      - INIT_UAT:
+          requires:
+            - cube_register
+            - FlatLabelController
+      - RolloutRelease:
+          requires:
+            - cube_register
+            - FlatLabelController
+      - Rollout_Tests1:
+          requires:
+            - cube_register
+            - FlatLabelController
+      - defualt:
+          requires:
+            - cube_register
+            - FlatLabelController
+      - node20-lint:
+          requires:
+            - cube_register
+            - FlatLabelController
+      - validate-full-docker-image:
+          requires:
+            - cube_register
+            - FlatLabelController
+      - validte-80:
+          requires:
+            - cube_register
+            - FlatLabelController
+      - preview-build:
+          requires:
+            - cube_register
+            - FlatLabelController
+      - rust-release:
+          requires:
+            - cube_register
+            - FlatLabelController
+      - Package_Staging1:
+          requires:
+            - cube_register
+            - FlatLabelController
+      - logServoLock
+      - UOY-28649:
+          requires:
+            - logServoLock
+      - update-metrics-crash:
+          requires:
+            - UOY-28649
+      - clrPink:
+          requires:
+            - UOY-28649
+      - acvN9ZHQpSzd:
+          requires:
+            - clrPink
+      - bake-it:
+          requires:
+            - acvN9ZHQpSzd
+      - wrappersCache:
+          requires:
+            - acvN9ZHQpSzd
+      - PulseSnapshot:
+          requires:
+            - wrappersCache
+      - build:
+          requires:
+            - PulseSnapshot
+      - upsertouter:
+          requires:
+            - PulseSnapshot
+      - MustPayment:
+          requires:
+            - upsertouter
+      - Package_Suite4:
+          requires:
+            - MustPayment
+      - home_provider_valid:
+          requires:
+            - MustPayment
+      - ACCOUNT_MATRIX:
+          requires:
+            - home_provider_valid
+      - tweak-router:
+          requires:
+            - ACCOUNT_MATRIX
+      - convertPriceMVP:
+          requires:
+            - ACCOUNT_MATRIX
+      - footer_pattern_classes_2:
+          requires:
+            - convertPriceMVP
+      - assemble-quick-regression-suite:
+          requires:
+            - footer_pattern_classes_2
+      - search010:
+          requires:
+            - footer_pattern_classes_2
+      - recordPx:
+          requires:
+            - search010
+      - atlas-plus:
+          requires:
+            - recordPx
+      - saveRPC:
+          requires:
+            - recordPx
+      - price-set:
+          requires:
+            - saveRPC
+      - alpha-v6:
+          requires:
+            - price-set
+      - model-dialog-semaphore
+      - readersById:
+          requires:
+            - model-dialog-semaphore
+      - kilo-5:
+          requires:
+            - readersById
+      - DD-END-OLD:
+          requires:
+            - readersById
+      - asyncArr:
+          requires:
+            - DD-END-OLD
+      - build-end-to-end-release-candidate:
+          requires:
+            - asyncArr
+      - rbMap_28:
+          requires:
+            - asyncArr
+      - COUPON_SHIPMENT:
+          requires:
+            - rbMap_28
+      - wip-router-crash:
+          requires:
+            - COUPON_SHIPMENT
+      - eg:
+          requires:
+            - COUPON_SHIPMENT
+      - trolley-pos-callback-stone:
+          requires:
+            - eg
+      - november-6:
+          requires:
+            - trolley-pos-callback-stone
+      - var-trace:
+          requires:
+            - trolley-pos-callback-stone
+      - byte_in_us:
+          requires:
+            - var-trace
+      - rigel-beta:
+          requires:
+            - byte_in_us
+      - LEXER_MINOR:
+          requires:
+            - byte_in_us
+      - Coppers:
+          requires:
+            - LEXER_MINOR
+      - ensure-nightly-docker-image:
+          requires:
+            - Coppers
+      - purple-hex:
+          requires:
+            - Coppers
+      - pre_begin:
+          requires:
+            - purple-hex
+      - APP-299:
+          requires:
+            - pre_begin
+      - id35003:
+          requires:
+            - pre_begin
+      - ipIPArticle:
+          requires:
+            - id35003
+      - add-oauth-reload:
+          requires:
+            - ipIPArticle
